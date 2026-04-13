@@ -1,0 +1,5 @@
+# This repo's own tests deliberately DO NOT load the preload at the bunfig
+# level. The integration tests spawn their own `bun test` subprocesses with
+# explicit `--preload` flags, which gives us reproducible isolated runs.
+# Using the preload on the repo's own test suite would record the repo's
+# own failures into its own dogfood DB — confusing and circular.

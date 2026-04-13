@@ -1,0 +1,18 @@
+{
+  "name": "@barf/bun-flaky-tests",
+  "version": "0.1.0",
+  "description": "Find the flaky tests in your Bun suite — SQLite-backed test-failure telemetry with a dark-themed HTML report",
+  "license": "MIT",
+  "type": "module",
+  "private": false,
+  "engines": {
+    "bun": ">=1.3.0"
+  },
+  "scripts": {
+    "test": "bun test",
+    "test:tracked": "bun src/run-tracked.ts",
+    "test:report": "bun src/report.ts --open",
+    "publish:dry": "bunx jsr publish --dry-run",
+    "publish:release": "bunx jsr publish"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "name": "@barf/bun-flaky-tests",
+  "version": "0.1.0",
+  "license": "MIT",
+  "exports": {
+    ".": "./src/mod.ts",
+    "./preload": "./src/preload.ts",
+    "./run-tracked": "./src/run-tracked.ts",
+    "./report": "./src/report.ts"
+  },
+  "publish": {
+    "include": [
+      "src/**/*.ts",
+      "src/**/*.sql",
+      "README.md",
+      "LICENSE",
+      "jsr.json",
+      "mrflaky.png"
+    ],
+    "exclude": [
+      "tests/**",
+      "**/*.test.ts",
+      ".github/**",
+      "node_modules/**",
+      "bunfig.toml"
+    ]
+  }
+}
