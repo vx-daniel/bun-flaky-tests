@@ -1,4 +1,6 @@
 /**
+ * @module
+ *
  * bun-flaky-tests preload.
  *
  * Loaded by `bun test` via `bunfig.toml`'s `[test] preload` array. Monkey-patches

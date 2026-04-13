@@ -1,4 +1,6 @@
 /**
+ * @module
+ *
  * `@barf/bun-flaky-tests` — public API.
  *
  * Most users don't import from this module directly. The tool is activated

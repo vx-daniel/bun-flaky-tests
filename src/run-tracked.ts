@@ -1,5 +1,6 @@
-#!/usr/bin/env bun
 /**
+ * @module
+ *
  * Authoritative test-telemetry runner.
  *
  * Spawns `bun test` as a subprocess so we can observe the true exit code

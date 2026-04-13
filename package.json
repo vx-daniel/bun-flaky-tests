@@ -1,6 +1,6 @@
 {
   "name": "@barf/bun-flaky-tests",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Find the flaky tests in your Bun suite — SQLite-backed test-failure telemetry with a dark-themed HTML report",
   "license": "MIT",
   "type": "module",

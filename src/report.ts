@@ -1,5 +1,6 @@
-#!/usr/bin/env bun
 /**
+ * @module
+ *
  * Generates a self-contained HTML report from the test-telemetry SQLite DB.
  *
  * Usage:
@@ -480,14 +481,25 @@ const STYLES = `
   }
   header {
     display: flex;
-    align-items: baseline;
+    align-items: center;
     justify-content: space-between;
     gap: 2rem;
     padding-bottom: 1rem;
     border-bottom: 1px solid var(--border);
     margin-bottom: 2rem;
   }
-  h1 { margin: 0; font-size: 1.5rem; font-weight: 600; }
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  .mascot {
+    width: 56px;
+    height: 56px;
+    flex-shrink: 0;
+    border-radius: 8px;
+  }
+  h1 { margin: 0; font-size: 1.5rem; font-weight: 600; font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; }
   h2 { margin: 2rem 0 1rem; font-size: 1.1rem; font-weight: 600; color: var(--text); }
   .subtitle { color: var(--text-muted); font-size: 0.85rem; }
   .summary {
@@ -669,14 +681,23 @@ function render(data: ReturnType<typeof loadData>): string {
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Test Telemetry Report</title>
+<title>bun-flaky-tests report</title>
 <style>${STYLES}</style>
 </head>
 <body>
   <header>
-    <div>
-      <h1>Test Telemetry</h1>
-      <div class="subtitle">Generated ${escapeHtml(generatedAt)} · ${escapeHtml(DB_PATH)}</div>
+    <div class="brand">
+      <img
+        class="mascot"
+        src="https://raw.githubusercontent.com/vx-daniel/bun-flaky-tests/refs/heads/main/mrflaky.png"
+        alt="Mr. Flaky — a cracked, worried pastry"
+        width="56"
+        height="56"
+      />
+      <div>
+        <h1>bun-flaky-tests</h1>
+        <div class="subtitle">Generated ${escapeHtml(generatedAt)} · ${escapeHtml(DB_PATH)}</div>
+      </div>
     </div>
     <div class="summary">
       <div><strong>${data.totalRuns}</strong> runs</div>
